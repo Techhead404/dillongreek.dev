@@ -1,35 +1,19 @@
-import { Inter } from "next/font/google";
-import { FormEvent } from 'react'
+import { Inter, Roboto_Mono } from "next/font/google";
 import NAV from "./components/nav";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Projects() {
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
- 
-    const formData = new FormData(event.currentTarget)
-    const response = await fetch('/api/submit', {
-      method: 'POST',
-      body: formData,
-    })
- 
-    // Handle response if necessary
-    const data = await response.json()
-    
-    const text = data.message
-    return text
-  }
- 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
+    <main
+    className={`flex min-h-screen flex-col items-center pt-10 ${inter.className}`}
+    >
         < NAV />
-    <form onSubmit={onSubmit}>
-      <input type="text" name="name" />
-      <button type="submit">Submit</button>
-    </form>
-    
+        <div className="m-auto text-center">
+        <h1 className="text-4xl">Nothing yet<span className="text-sky-400"> :( </span>but here is my <a href="http://github.com/techhead404" className="text-sky-400 underline">Github</a></h1>
+        </div>
+          
     </main>
   );
 }
