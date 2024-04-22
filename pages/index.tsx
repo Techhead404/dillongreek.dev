@@ -1,37 +1,39 @@
 import Image from "next/image";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import NAV  from "./components/nav";
+import pic from "../assets/backofhead.jpg"
 
-//const inter = Inter({ subsets: ["latin"] });
 const inter = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-
     <main
-      className={`flex min-h-screen flex-col items-center justify-between pt-10 ${inter.className}`}
+    className="min-h-screen pt-10"
     >
-      <NAV />
-      <div className="flex w-full items-center justify-center">
-        <h1 className="text-9xl dark:drop-shadow-[0_0_0.4rem_#29cce5]">Coming Soon</h1>
-        
-      </div>
-
-      <div className="justify-between space-y-2 items-center">
-        <p>Built with</p>
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={360}
-          height={74}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-
-      </div>
+      <div className="flex h-4/5 justify-between">
+      <section className="w-1/4 mx-auto text-center">
+      <Image
+        src={pic}
+        alt="Picture of the author"
+        style={
+          {borderRadius: "50%", width: "fit-content", height:"auto"}}
+        >
+      </Image>
+      <h1 className="text-xl">Dillon Greek</h1>
+      <p>Full Stack Developer</p>
+      
+      </section>
+      <section className="w-1/2 space-y-10 h-fit  mx-auto border-2 rounded-2xl border-sky-400 p-8 bg-[#171717]">
+      <h2 className="text-xl font-bold text-sky-400 ">About Me</h2>
+      <p>
+        I am a full stack developer with a passion for creating and learning. I have experience in a variety of languages and frameworks including PHP, Javascript, C#, and Python. I have an associates degree in Computer Information Science and am currently working on my bachelors degree in Cyber Security. I am always looking for new projects to work on and new things to learn.
+      </p>
+      <p>
+        I also study electical engineering and have experience with microcontrollers and embedded systems. I have worked with the Arduino, ESP32, Attiny85, and Raspberry Pi platforms and have experience with C and Python programming.
+      </p>
+      </section>
+    </div>
+      
     </main>
   );
 }
