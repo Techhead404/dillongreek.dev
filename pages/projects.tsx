@@ -12,7 +12,6 @@ export default function Projects() {
         <div className="m-auto text-center">
         <h1 className="text-4xl">Nothing yet<span className="text-sky-400"> :( </span>but here is my <a href="http://github.com/techhead404" className="text-sky-400 underline">Github</a></h1>
         </div>
-          
     </main>
   );
 }
