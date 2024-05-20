@@ -1,7 +1,7 @@
 # DillonGreek.dev
 
 This project is a work in progress. It's built with Next.js (first time using Next.js)  
-It is live and can be seen here -->[DillonGreek.dev](https://www.dillongreek.dev).
+It is live and can be seen here -->[DillonGreek.dev](https://dillongreek.dev).
 
 
 ## Overview
