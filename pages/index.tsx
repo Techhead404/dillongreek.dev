@@ -10,8 +10,8 @@ export default function Home() {
     <main
     className="min-h-screen pt-10"
     >
-      <div className="flex h-4/5 justify-between">
-      <div className="w-1/4 mx-auto text-center">
+      <div className="flex flex-col h-4/5 justify-between sm:flex-row">
+      <div className="sm:w-1/4 w-4/5 mx-auto text-center pb-10">
       <Image
         src={pic}
         alt="Picture of the author"
@@ -22,7 +22,7 @@ export default function Home() {
       <h1 className="text-xl">Dillon Greek</h1>
       <p>Full Stack Developer</p>
       </div>
-      <section className="w-1/2 space-y-10 h-fit  mx-auto border-2 rounded-2xl border-sky-400 p-8 bg-[#171717]">
+      <section className="sm:w-1/2 w-11/12 space-y-10 h-fit  mx-auto border-2 rounded-2xl border-sky-400 p-8 bg-[#171717]">
       <h2 className="text-xl font-bold text-sky-400 ">About Me</h2>
       <p>
         I am a full stack developer with a passion for creating and learning. I have experience in a variety of languages and frameworks including PHP, Javascript, C#, and Python. I have an associates degree in Computer Information Science and am currently working on my bachelors degree in Cyber Security. I am always looking for new projects to work on and new things to learn.

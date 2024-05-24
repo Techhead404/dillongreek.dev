@@ -12,10 +12,8 @@ const inter = Roboto_Mono({ subsets: ["latin"] });
 export default function Projects() {
   return (
     <main className="flex min-h-screen flex-col pt-10">
-          <div className="mx-auto flex gap-5">
-          
-        </div>
-        <div className="grid grid-cols-3 gap-4 p-20 w-4/5 mx-auto">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 p-20 w-fill md:w-4/5 mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-5 w-auto">
             <Image
               src={stock}
