@@ -14,6 +14,9 @@ export default function NAV() {
         <li className="hover:drop-shadow-[0_0_0.7rem_#29cce5]">
           <Link href="/projects">Projects</Link>
         </li>
+        <li className="hover:drop-shadow-[0_0_0.7rem_#29cce5]">
+          <Link href="/contact">Contact</Link>
+        </li>
       </ul>
     </nav>
   );
