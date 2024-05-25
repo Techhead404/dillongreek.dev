@@ -7,8 +7,8 @@ const inter = Roboto_Mono({ subsets: ["latin"] });
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 
-const reddit = <SocialIcon url="url=https://www.reddit.com" />
-export default function Home() {
+
+export default function Contact() {
   return (
     <main
     className="min-h-screen pt-10"
