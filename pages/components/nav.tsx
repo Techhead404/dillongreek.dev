@@ -5,6 +5,7 @@ const inter = Roboto_Slab({ subsets: ["latin"] });
 
 export default function NAV() {
   return (
+    
     <nav className={`flex justify-between mx-auto w-full content-start px-10 py-8 ${inter.className}`}>
       <h1 className="text-2xl">DillonGreek.dev</h1>
       <ul className="flex space-x-5">
