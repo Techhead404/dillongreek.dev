@@ -21,7 +21,6 @@ export default function Contact() {
       <SocialIcon url="https://www.twitch.tv/techs_studio" target="_blank"/>
       <SocialIcon url="https://discord.com/channels/dillon_g" target="_blank"/>
       </div>
-      
     </div>
       
     </main>

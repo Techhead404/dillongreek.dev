@@ -23,7 +23,7 @@ export default function Projects() {
               >
             </Image>
             <h4 className="text-xl text-sky-400 font-bold mt-2"><a href="https://github.com/techhead404" target="_blank" className="text-sky-400 text-pretty">GitHub</a></h4>
-            <p className="text-gray-500">My GitHub.</p>
+            <p className="text-gray-500">My GitHub where I have most projects. I use Github for both version control and backup/fileshare between systems.</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-5 w-auto">
             <Image
@@ -34,7 +34,7 @@ export default function Projects() {
               >
             </Image>
             <h4 className="text-xl text-sky-400 font-bold mt-2">Bubble Danger</h4>
-            <p className="text-gray-500">Android game built with Unity.</p>
+            <p className="text-gray-500">Android game built with Unity, using Google Play Services and Unity Monetization.</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-5 w-auto">
             <Image
@@ -45,7 +45,7 @@ export default function Projects() {
               >
             </Image>
             <h4 className="text-xl text-sky-400 font-bold mt-2"><a href="http://techssite.com" target="_blank" className="text-sky-400 text-pretty">Techs Site</a></h4>
-            <p className="text-gray-500">My blog for sharing project and reviews.</p>
+            <p className="text-gray-500">My blog for sharing project and reviews. Migrating to DillonGreek.dev soon.</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-5 w-auto">
             <Image
@@ -56,7 +56,7 @@ export default function Projects() {
               >
             </Image>
             <h4 className="text-xl text-sky-400 font-bold mt-2"><a href="http://HealingPeaceMassage.com" target="_blank" className="text-sky-400 text-pretty">Healing Peace Massage</a></h4>
-            <p className="text-gray-500">Website for a local massage business.</p>
+            <p className="text-gray-500">Website for a local massage business. This site was built using Vue.js for the frontend and Express.js on the backend.</p>
           </div>
         </div>
     </main>
