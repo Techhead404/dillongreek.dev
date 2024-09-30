@@ -28,7 +28,7 @@ export default function Home() {
         I am a full stack developer with a passion for creating and learning. I have experience in a variety of languages and frameworks including PHP, Javascript, C#, and Python. I have an associates degree in Computer Information Science and am currently working on my bachelors degree in Cybersecurity. I am always looking for new projects to work on and new things to learn.
       </p>
       <p>
-        I also study electical engineering and have experience with microcontrollers and embedded systems. I work with the Arduino, ESP32, Attiny85, and Raspberry Pi.
+        I also work a lot with embedded systems and microcontrollers like the Arduino, ESP32, Attiny85, and Raspberry Pi.
       </p>
       </section>
     </div>
