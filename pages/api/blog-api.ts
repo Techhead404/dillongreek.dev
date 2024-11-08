@@ -1,5 +1,6 @@
 import { NextApiResponse, NextApiRequest } from 'next';
 import { db } from '@vercel/postgres';
+import { debuglog } from 'util';
 
 export default async function handler( _req: NextApiRequest, res: NextApiResponse )  
 {
@@ -8,7 +9,8 @@ export default async function handler( _req: NextApiRequest, res: NextApiRespons
         //const result = await client.sql`SELECT * FROM blogs`;
         const result = await client.query('SELECT * FROM blogs');
         console.log('Result:', result);
-        const blogs = Array.isArray(result) ? result : [];
+        const blogs = result;
+        console.log('Blogs:', blogs);
         return res.status(200).json({ blogs });
 
     } catch (error) {
