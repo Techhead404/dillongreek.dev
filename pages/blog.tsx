@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export default function Blog() {
     interface BlogPost {
@@ -20,9 +21,8 @@ export default function Blog() {
                 const result = await response.json();
 
                 if (result && Array.isArray(result.blogs)) {
-                    setData(result.blogs as BlogPost[]); 
+                    setData(result.blogs as BlogPost[]);
                 } else {
-                    console.error('Fetched data is not an array:', result);
                     throw new Error('Fetched data format is invalid');
                 }
             } catch (err) {
@@ -40,11 +40,14 @@ export default function Blog() {
             {error && <p className="error">{error}</p>}
             <div className="blog-container">
                 {data.map((post) => (
-                    <div key={post.blogname} className="blog-card">
-                        <h2>{post.blogname}</h2>
-                        <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
-                        <p>{post.blogbody}</p>
-                    </div>
+                    <Link key={post.blogname} href={`/blog/${post.blogname}`} passHref>
+                        <div className="blog-card">
+                            <h2>{post.blogname}</h2>
+                            <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
+                            <p>{post.blogbody}</p>
+                            <button className="read-more-button">Read More</button>
+                        </div>
+                    </Link>
                 ))}
             </div>
 
@@ -82,6 +85,7 @@ export default function Blog() {
                     padding: 20px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                     transition: transform 0.2s;
+                    cursor: pointer;
                 }
                 .blog-card:hover {
                     transform: translateY(-5px);
@@ -99,7 +103,20 @@ export default function Blog() {
                     font-size: 1em;
                     line-height: 1.5;
                 }
+                .read-more-button {
+                    background-color: #0070f3;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.2s;
+                }
+                .read-more-button:hover {
+                    background-color: #005bb5;
+                }
             `}</style>
-        </div>
+         </div>
     );
 }
