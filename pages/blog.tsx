@@ -16,18 +16,24 @@ export default function Blog() {
             try {
                 const response = await fetch('/api/blog-api');
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const result = await response.json();
+
                 console.log('Fetched data:', result); // Log the fetched data
-                if (Array.isArray(result)) {
-                    setData(result as BlogPost[]);
+                console.log('Type of fetched data:', typeof result); // Log the type of fetched data
+                console.log('Fetched data keys:', Object.keys(result)); // Log the keys of the fetched data object
+
+                // Type guard to check if the data has the expected structure
+                if (result && Array.isArray(result.blogs)) {
+                    setData(result.blogs as BlogPost[]); // Access the array under the 'blogs' key
                 } else {
-                    throw new Error('Fetched data is not an array');
+                    console.error('Fetched data is not an array:', result);
+                    throw new Error('Fetched data format is invalid');
                 }
             } catch (err) {
                 console.error('Error fetching blogs:', err);
-                setError('Failed to fetch blogs');
+                setError('Failed to fetch blogs. Please try again later.');
             }
         }
 
@@ -39,10 +45,10 @@ export default function Blog() {
             <h1>Blog</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <ul>
-                {data.map((post: BlogPost) => (
+                {data.map((post) => (
                     <li key={post.blogname}>
                         <h2>{post.blogname}</h2>
-                        <p>{post.blogdate}</p>
+                        <p>{new Date(post.blogdate).toLocaleDateString()}</p> {/* Format date */}
                         <p>{post.blogbody}</p>
                     </li>
                 ))}
@@ -50,4 +56,3 @@ export default function Blog() {
         </div>
     );
 }
-
