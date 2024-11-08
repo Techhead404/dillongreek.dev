@@ -1,31 +1,40 @@
-import { NextApiResponse, NextApiRequest } from 'next';
-import { db } from '@vercel/postgres';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { db, VercelPoolClient } from '@vercel/postgres';
 
-export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
-    let client;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    let client: VercelPoolClient | null = null;
+
     try {
         client = await db.connect();
+        const { blogname } = req.query;
 
-        if (_req.method === 'GET') {
-        const result = await client.query('SELECT * FROM blogs');
-        
-        // Transform the result into a key-value format
-        const blogs = result.rows.map((row) => ({
-            blogname: row.blogname,
-            blogdate: row.blogdate,
-            blogbody: row.blogbody,
-        }));
-        return res.status(200).json({ blogs });
-    } if (_req.method === 'POST') {
-        const blogname = _req.body.blogname;
-        const result = await client.query('SELECT {blogname} FROM blogs WHERE blogname = $1', [blogname]);
-        const blog = result.rows[0];
-        return res.status(200).json({ blog });
+        let result;
+
+        if (blogname) {
+            // Fetch specific blog post by blogname
+            result = await client.query('SELECT * FROM blogs WHERE blogname = $1', [blogname]);
+            if (result.rows.length === 0) {
+                return res.status(404).json({ error: 'Blog post not found' });
+            }
+            const blogPost = {
+                blogname: result.rows[0].blogname,
+                blogdate: result.rows[0].blogdate,
+                blogbody: result.rows[0].blogbody,
+            };
+            return res.status(200).json(blogPost);
+        } else {
+            // Fetch all blog posts
+            result = await client.query('SELECT * FROM blogs');
+            const blogs = result.rows.map((row) => ({
+                blogname: row.blogname,
+                blogdate: row.blogdate,
+                blogbody: row.blogbody,
+            }));
+            return res.status(200).json({ blogs });
         }
-
     } catch (error) {
-        console.error('Error fetching blogs:', error);
-        return res.status(500).json({ error: 'Error fetching blogs' });
+        console.error('Error fetching blog posts:', error);
+        return res.status(500).json({ error: 'Error fetching blog posts' });
     } finally {
         if (client) {
             client.release();

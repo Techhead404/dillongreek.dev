@@ -15,14 +15,22 @@ export default function BlogPost() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (blogname) {
+        console.log('Router is ready:', router.isReady); // Debugging router readiness
+        console.log('Blogname from query:', blogname); // Debugging blogname
+
+        // Wait until the router is ready and blogname is defined
+        if (router.isReady && blogname) {
             // Fetch the specific blog post by blogname
             async function fetchBlogPost() {
                 try {
+                    console.log(`Fetching blog post with blogname: ${blogname}`); // Debugging fetch start
                     const response = await fetch(`/api/blog-api?blogname=${blogname}`);
+                    
                     if (!response.ok) throw new Error('Failed to fetch blog post');
-
+                    
                     const result = await response.json();
+                    console.log('Fetch result:', result); // Log fetched data
+
                     if (result && result.blogname) {
                         setPost(result);
                     } else {
@@ -36,7 +44,7 @@ export default function BlogPost() {
 
             fetchBlogPost();
         }
-    }, [blogname]);
+    }, [router.isReady, blogname]); // Depend on router.isReady and blogname
 
     if (error) return <p style={{ color: 'red' }}>{error}</p>;
     if (!post) return <p>Loading...</p>;

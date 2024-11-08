@@ -45,7 +45,6 @@ export default function Blog() {
                             <h2>{post.blogname}</h2>
                             <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
                             <p>{post.blogbody}</p>
-                            <button className="read-more-button">Read More</button>
                         </div>
                     </Link>
                 ))}
