@@ -20,7 +20,7 @@ export default function Blog() {
                 }
                 const result = await response.json();
                 console.log('Result:', result);
-                if (result !== null) {
+                if (Array.isArray(result)) {
                     setData(result as BlogPost[]);
                 } else {
                     throw new Error('Fetched data is not an array');
