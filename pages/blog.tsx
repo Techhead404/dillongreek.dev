@@ -19,7 +19,11 @@ export default function Blog() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const result = await response.json();
-                setData(result as BlogPost[]);
+                if (Array.isArray(result)) {
+                    setData(result as BlogPost[]);
+                } else {
+                    throw new Error('Fetched data is not an array');
+                }
             } catch (err) {
                 console.error('Error fetching blogs:', err);
                 setError('Failed to fetch blogs');
