@@ -19,7 +19,8 @@ export default function Blog() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const result = await response.json();
-                if (Array.isArray(result)) {
+                console.log('Result:', result);
+                if (result !== null) {
                     setData(result as BlogPost[]);
                 } else {
                     throw new Error('Fetched data is not an array');
@@ -40,7 +41,8 @@ export default function Blog() {
             <ul>
                 {data.map((post) => (
                     <li key={post.blogname}>
-                        <h2>{post.blogdate}</h2>
+                        <h2>{post.blogname}</h2>
+                        <p>{post.blogdate}</p>
                         <p>{post.blogbody}</p>
                     </li>
                 ))}
@@ -48,3 +50,4 @@ export default function Blog() {
         </div>
     );
 }
+
