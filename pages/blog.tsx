@@ -11,7 +11,6 @@ export default function Blog() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        // Fetch blogs when the component mounts
         async function fetchBlogs() {
             try {
                 const response = await fetch('/api/blog-api');
@@ -20,13 +19,8 @@ export default function Blog() {
                 }
                 const result = await response.json();
 
-                console.log('Fetched data:', result); // Log the fetched data
-                console.log('Type of fetched data:', typeof result); // Log the type of fetched data
-                console.log('Fetched data keys:', Object.keys(result)); // Log the keys of the fetched data object
-
-                // Type guard to check if the data has the expected structure
                 if (result && Array.isArray(result.blogs)) {
-                    setData(result.blogs as BlogPost[]); // Access the array under the 'blogs' key
+                    setData(result.blogs as BlogPost[]); 
                 } else {
                     console.error('Fetched data is not an array:', result);
                     throw new Error('Fetched data format is invalid');
@@ -41,18 +35,71 @@ export default function Blog() {
     }, []);
 
     return (
-        <div>
+        <div className="dark-theme">
             <h1>Blog</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <ul>
+            {error && <p className="error">{error}</p>}
+            <div className="blog-container">
                 {data.map((post) => (
-                    <li key={post.blogname}>
+                    <div key={post.blogname} className="blog-card">
                         <h2>{post.blogname}</h2>
-                        <p>{new Date(post.blogdate).toLocaleDateString()}</p> {/* Format date */}
+                        <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
                         <p>{post.blogbody}</p>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
+
+            <style jsx>{`
+                /* Dark Theme Styles */
+                .dark-theme {
+                    background-color: #121212;
+                    color: #ffffff;
+                    min-height: 100vh;
+                    padding: 20px;
+                    font-family: Arial, sans-serif;
+                }
+                h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .error {
+                    color: red;
+                    text-align: center;
+                }
+
+                /* Blog Container */
+                .blog-container {
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    margin: 0 auto;
+                    max-width: 1200px;
+                }
+
+                /* Blog Card */
+                .blog-card {
+                    background-color: #1e1e1e;
+                    border-radius: 8px;
+                    padding: 20px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                    transition: transform 0.2s;
+                }
+                .blog-card:hover {
+                    transform: translateY(-5px);
+                }
+                .blog-card h2 {
+                    margin: 0 0 10px;
+                    font-size: 1.5em;
+                }
+                .blog-card .date {
+                    font-size: 0.9em;
+                    color: #a9a9a9;
+                    margin-bottom: 15px;
+                }
+                .blog-card p {
+                    font-size: 1em;
+                    line-height: 1.5;
+                }
+            `}</style>
         </div>
     );
 }
