@@ -19,6 +19,7 @@ export default function Blog() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const result = await response.json();
+                console.log('Fetched data:', result); // Log the fetched data
                 if (Array.isArray(result)) {
                     setData(result as BlogPost[]);
                 } else {
@@ -38,7 +39,7 @@ export default function Blog() {
             <h1>Blog</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <ul>
-                {data.map((post) => (
+                {data.map((post: BlogPost) => (
                     <li key={post.blogname}>
                         <h2>{post.blogname}</h2>
                         <p>{post.blogdate}</p>
