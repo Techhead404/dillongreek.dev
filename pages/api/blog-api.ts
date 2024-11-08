@@ -7,9 +7,9 @@ export default async function handler( _req: NextApiRequest, res: NextApiRespons
     try {
         const client = await db.connect();
         const result = await client.query('SELECT * FROM blogs');
-        console.log('Result:', result);
+
         const blogs = result.rows; // Ensure blogs is an array
-        console.log('Blogs:', blogs);
+
         return res.status(200).json({ blogs });
 
     } catch (error) {

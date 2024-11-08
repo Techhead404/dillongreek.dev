@@ -19,7 +19,9 @@ export default function Blog() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const result = await response.json();
-                console.log('Result:', result);
+                if (!Array.isArray(result)) {
+                    throw new Error('Fetched data is not an array');
+                }
                 if (Array.isArray(result)) {
                     setData(result as BlogPost[]);
                 } else {
