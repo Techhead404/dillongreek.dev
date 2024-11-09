@@ -37,6 +37,13 @@ export default function Blog() {
     return (
         <div className="dark-theme">
             <h1>Blog</h1>
+            <Link href="/rickroll">RickRock</Link>
+            <br />
+            <Link href="/piCam">PiCam</Link>
+            <br />
+            <Link href="/EDC">EDC</Link>
+            <br />
+
             {error && <p className="error">{error}</p>}
             <div className="blog-container">
                 {data.map((post) => (

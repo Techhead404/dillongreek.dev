@@ -18,7 +18,7 @@ export default function Contact() {
       <SocialIcon url="https://www.reddit.com/user/techs_studio/" target="_blank"/>
       <SocialIcon url="https://www.linkedin.com/in/dillon-greek-42386a1a0" target="_blank"/>
       <SocialIcon url="https://youtube.com/@techsstudio7159" target="_blank"/>
-      <SocialIcon url="https://www.twitch.tv/techs_studio" target="_blank"/>
+      <SocialIcon url="https://www.twitch.tv/dillongreekdotdev" target="_blank"/>
       <SocialIcon url="https://discord.com/channels/dillon_g" target="_blank"/>
       </div>
     </div>
