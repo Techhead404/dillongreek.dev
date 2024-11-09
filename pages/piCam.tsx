@@ -82,7 +82,7 @@ network={
 
         <h2>Connect to the Camera.</h2>
         <p>
-          Almost finished! With everything set up now it’s time to plug it in and connect to it. To connect to the camera you will need the IP address of the pi. The easiest way is to check your router for the Pi and get the IP from it. The second option is to use the command prompt. Type ipconfig and press enter. Then enter arp –a this will return a list of IP addresses. After you have your list turn the pi zero on and wait a few minutes for it to fully set up and run arp –a again. You should now see a new IP Address on the list. Now that you have the IP Address, open a browser and put the IP Address into the address bar. MotionEye will ask for a log in and password. Default it is set to Username: admin Password “blank”. So enter admin and hit enter. Now you should see your camera feed in the browser. One important note is if you change the Username or Password REMEMBER IT. There is no way to reset the password. You will have to reinstall MotionEye and redo the json file to reset the password.
+          Almost finished! With everything set up now it is time to plug it in and connect to it. To connect to the camera you will need the IP address of the pi. The easiest way is to check your router for the Pi and get the IP from it. The second option is to use the command prompt. Type ipconfig and press enter. Then enter arp –a this will return a list of IP addresses. After you have your list turn the pi zero on and wait a few minutes for it to fully set up and run arp –a again. You should now see a new IP Address on the list. Now that you have the IP Address, open a browser and put the IP Address into the address bar. MotionEye will ask for a log in and password. Default it is set to Username: admin Password “blank”. So enter admin and hit enter. Now you should see your camera feed in the browser. One important note is if you change the Username or Password REMEMBER IT. There is no way to reset the password. You will have to reinstall MotionEye and redo the json file to reset the password.
         </p>
 
         <h2>Conclusion.</h2>
@@ -90,7 +90,7 @@ network={
           Congrats you now have your own wifi camera you use how you please. Now that its finished you could do some upgrades. Everything on my camera is simple plug in upgrades. No change to software was needed. The <a href="https://amzn.to/3jHjicA" target="_blank" rel="noopener">IR camera</a> was a great add-on for keeping track of kids sneaking snacks in the middle of the night, and the <a href="https://amzn.to/37KFjVl" target="_blank" rel="noopener">battery pack</a> means I can set up the camera anywhere without having a cord hanging from it.
         </p>
         <p>
-          I hope you enjoyed this and let me know what you end up with. That’s a great thing about using a Pi, you can add almost anything and make it fit your needs.
+          I hope you enjoyed this and let me know what you end up with. That is a great thing about using a Pi, you can add almost anything and make it fit your needs.
         </p>
         <div className="flex justify-center mb-8">
           <Image

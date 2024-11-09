@@ -30,8 +30,8 @@ export default function Home() {
           play around. Goofing off in a sense is a great way to learn something
           fast. When I got my hands on the DigiSpark Attiny85 USB that was
           exactly what I did. After I was finished I realized that I actually
-          made a fun project that others might enjoy. So that’s what I’m doing.
-          So let&apos;s jump into it.
+          made a fun project that others might enjoy. So that is what I am doing.
+          So lets jump into it.
         </p>
         <p>
           First thing you are going to need is the Attiny85 USB. They are super
@@ -70,7 +70,7 @@ export default function Home() {
         <p>
           Click on Tools / Boards Manager and search Digistump. Install the
           Digistump AVR Boards. After that is finished go into your IDE and
-          select the Board &quot;DigiSpark (Default - 16.5mhz)&quot;.
+          select the Board -- DigiSpark Default - 16.5mhz.
         </p>
 
         <Image
@@ -81,7 +81,7 @@ export default function Home() {
         />
 
         <p>
-          Now that you have the drivers installed and the board selected it&apos;s
+          Now that you have the drivers installed and the board selected it is
           time to write some code and upload it to the board. This script has
           basic features for keyboard output and covers enough that you can move
           on to other projects and know how to use the keyboard out. We will
@@ -121,7 +121,7 @@ void setup() {
 
         <p>
           We add a delay so the computer has time to do what we asked. If you
-          didn’t have the delay it would type faster than the computer could
+          did not have the delay it would type faster than the computer could
           handle. Now we are searching for Adjust Volume and using the Tab key
           to move to the volume slider. This part might need to be written
           differently depending on your computer. Just navigate to the setting
