@@ -27,7 +27,7 @@ export default function Home() {
         </div>
 
         <p>
-          As someone working a full-time job and having kids, I've perfected a routine that ensures I make the most out of every moment, especially during short waits and commutes. My Everyday Carry (EDC) is designed to balance my professional and personal development needs. After countless hours of shopping, I found a small bag that's just large enough for my laptop, a book, and a few accessories like a notebook and charger. With my laptop and a book always at hand, I've created a system that maximizes productivity regardless of the time available.
+          As someone working a full-time job and having kids, I&apos;ve perfected a routine that ensures I make the most out of every moment, especially during short waits and commutes. My Everyday Carry (EDC) is designed to balance my professional and personal development needs. After countless hours of shopping, I found a small bag that&apos;s just large enough for my laptop, a book, and a few accessories like a notebook and charger. With my laptop and a book always at hand, I&apos;ve created a system that maximizes productivity regardless of the time available.
         </p>
         <h4>The Essentials in My EDC</h4>
         <p>My EDC is compact yet versatile, containing just the essentials:</p>
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <h4>Making the Most of Short Bursts of Time</h4>
         <p>
-          Time management is key when balancing a busy schedule. Here's how I break down my activities based on the time I have:
+          Time management is key when balancing a busy schedule. Here&apos;s how I break down my activities based on the time I have:
         </p>
 
         <ul>
@@ -57,19 +57,19 @@ export default function Home() {
             <strong>15 Minutes or Less: Reading a Book:</strong> If I have a short window, like waiting for an appointment or during a quick coffee break, I dive into my book. This habit not only keeps me entertained but also continually broadens my knowledge and stimulates my creativity. Whether it's a technical manual, a business strategy guide, or a fiction novel, I find that even a few minutes of reading can be refreshing and enlightening.
           </li>
           <li>
-            <strong>More than 15 Minutes: Coding and Labs:</strong> When I know I'll have more than 15 minutes, I switch to my laptop. This is my time to delve into coding projects, tackle labs on Hack The Box, or work on other platforms. These sessions are dedicated to enhancing my skills, troubleshooting challenging problems, and pushing my professional boundaries.
+            <strong>More than 15 Minutes: Coding and Labs:</strong> When I know I&apos;ll have more than 15 minutes, I switch to my laptop. This is my time to delve into coding projects, tackle labs on Hack The Box, or work on other platforms. These sessions are dedicated to enhancing my skills, troubleshooting challenging problems, and pushing my professional boundaries.
           </li>
           </ul>
         <h4>Why This System Works</h4>
         <ul>
           <li>
-            <strong>Flexibility:</strong> The dual-option setup of my EDC means I'm never at a loss for something productive to do, regardless of the time constraints.
+            <strong>Flexibility:</strong> The dual-option setup of my EDC means I&apos;m never at a loss for something productive to do, regardless of the time constraints.
           </li>
           <li>
             <strong>Efficiency:</strong> By having clear guidelines on how to use my time, I avoid the common trap of wasting minutes deciding what to do.
           </li>
           <li>
-            <strong>Continuous Learning:</strong> Whether through reading or coding, I'm always learning and improving, which keeps me engaged and motivated.
+            <strong>Continuous Learning:</strong> Whether through reading or coding, I&apos;m always learning and improving, which keeps me engaged and motivated.
           </li>
         </ul>
 
@@ -87,8 +87,9 @@ export default function Home() {
         </ul>
 
         <p>
-          By structuring my time this way, I've found that even the busiest of days have pockets of productivity. Whether it's through a quick read or a focused coding session, every moment counts. Try adopting a similar approach, and you might find that your productivity soars as well.
-        </p><style jsx>{`</p>
+          By structuring my time this way, I&apos;ve found that even the busiest of days have pockets of productivity. Whether it&apos;s through a quick read or a focused coding session, every moment counts. Try adopting a similar approach, and you might find that your productivity soars as well.
+        </p>
+        <style jsx>{`
           main {
             font-family: ${inter.style.fontFamily};
           }

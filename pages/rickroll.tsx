@@ -31,7 +31,7 @@ export default function Home() {
           fast. When I got my hands on the DigiSpark Attiny85 USB that was
           exactly what I did. After I was finished I realized that I actually
           made a fun project that others might enjoy. So that’s what I’m doing.
-          So let's jump into it.
+          So let&apos;s jump into it.
         </p>
         <p>
           First thing you are going to need is the Attiny85 USB. They are super
@@ -70,7 +70,7 @@ export default function Home() {
         <p>
           Click on Tools / Boards Manager and search Digistump. Install the
           Digistump AVR Boards. After that is finished go into your IDE and
-          select the Board "DigiSpark (Default - 16.5mhz)".
+          select the Board &quot;DigiSpark (Default - 16.5mhz)&quot;.
         </p>
 
         <Image
@@ -81,7 +81,7 @@ export default function Home() {
         />
 
         <p>
-          Now that you have the drivers installed and the board selected it's
+          Now that you have the drivers installed and the board selected it&apos;s
           time to write some code and upload it to the board. This script has
           basic features for keyboard output and covers enough that you can move
           on to other projects and know how to use the keyboard out. We will
@@ -161,7 +161,7 @@ void setup() {
 
         <p>
           Now that the volume is up, we will search again this time searching
-          for Chrome “since that’s what is installed on my computer”.
+          for Chrome “since that is what is installed on my computer”.
         </p>
 
         <pre>
