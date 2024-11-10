@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import Link from 'next/link';
+import Link from 'next/link'; 
+
+import Image from "next/image";
 
 export default function Blog() {
     interface BlogPost {
         blogname: string;
         blogdate: string;
-        blogbody: string;
+        blogcategory: string;
+        thumb: string;
+        blurb: string;
     }
+    
+
 
     const [data, setData] = useState<BlogPost[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -22,6 +28,7 @@ export default function Blog() {
 
                 if (result && Array.isArray(result.blogs)) {
                     setData(result.blogs as BlogPost[]);
+                  
                 } else {
                     throw new Error('Fetched data format is invalid');
                 }
@@ -37,12 +44,6 @@ export default function Blog() {
     return (
         <div className="dark-theme">
             <h1>Blog</h1>
-            <Link href="/rickroll">RickRock</Link>
-            <br />
-            <Link href="/piCam">PiCam</Link>
-            <br />
-            <Link href="/EDC">EDC</Link>
-            <br />
 
             {error && <p className="error">{error}</p>}
             <div className="blog-container">
@@ -51,12 +52,19 @@ export default function Blog() {
                         <div className="blog-card">
                             <h2>{post.blogname}</h2>
                             <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
-                            <p>{post.blogbody}</p>
+                            <p>{post.blogcategory}</p>
+                            <Image
+                                src={`/${post.thumb}`}  // Ensure this matches the actual path in /public
+                                alt={post.blogname}
+                                width={300}
+                                height={200}
+                                style={{ objectFit: 'cover' }}
+                            />
                         </div>
                     </Link>
                 ))}
             </div>
-
+            
             <style jsx>{`
                 /* Dark Theme Styles */
                 .dark-theme {

@@ -20,6 +20,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 blogname: result.rows[0].blogname,
                 blogdate: result.rows[0].blogdate,
                 blogbody: result.rows[0].blogbody,
+                blogcategory: result.rows[0].blogcategory,
+                thumb: result.rows[0].thumb,
+                blurb: result.rows[0].blurb,
             };
             return res.status(200).json(blogPost);
         } else {
@@ -29,6 +32,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 blogname: row.blogname,
                 blogdate: row.blogdate,
                 blogbody: row.blogbody,
+                blogcategory: row.blogcategory,
+                thumb: row.thumb,
+                blurb: row.blurb,
             }));
             return res.status(200).json({ blogs });
         }

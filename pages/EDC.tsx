@@ -5,6 +5,7 @@ import edc1 from "../assets/edc/edc1.webp";
 import edc2 from "../assets/edc/edc2.webp";
 
 
+
 const inter = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
         </div>
 
         <p>
-          As someone working a full-time job and having kids, I&apos;ve perfected a routine that ensures I make the most out of every moment, especially during short waits and commutes. My Everyday Carry (EDC) is designed to balance my professional and personal development needs. After countless hours of shopping, I found a small bag that&apos;s just large enough for my laptop, a book, and a few accessories like a notebook and charger. With my laptop and a book always at hand, I&apos;ve created a system that maximizes productivity regardless of the time available.
+          As someone working a full-time job and having kids, I have perfected a routine that ensures I make the most out of every moment, especially during short waits and commutes. My Everyday Carry (EDC) is designed to balance my professional and personal development needs. After countless hours of shopping, I found a small bag that&apos;s just large enough for my laptop, a book, and a few accessories like a notebook and charger. With my laptop and a book always at hand, I&apos;ve created a system that maximizes productivity regardless of the time available.
         </p>
         <h4>The Essentials in My EDC</h4>
         <p>My EDC is compact yet versatile, containing just the essentials:</p>

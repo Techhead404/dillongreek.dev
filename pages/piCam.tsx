@@ -50,7 +50,7 @@ export default function Home() {
         </p>
         <div className="flex justify-center mb-8">
           <Image
-            src={pi2}
+            src={`/${pi2}`+ ".webp"}
             alt="DigiSpark Attiny85 USB"
             className="rounded-lg shadow-lg"
             style={{ width: "100%", height: "auto", maxWidth: "600px" }}

@@ -1,15 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import Image from "next/image";
-import { Roboto_Mono } from "next/font/google";
-//import NAV from "../components/nav";
-import edc1 from "../assets/edc/edc1.webp";
-import edc2 from "../assets/edc/edc2.webp";
-
-
-const inter = Roboto_Mono({ subsets: ["latin"] });
-
 export default function BlogPost() {
     const router = useRouter();
     const { blogname } = router.query;
@@ -19,10 +10,6 @@ export default function BlogPost() {
         blogdate: string;
         blogbody: string;
     }
-
-
-
-
 
     const [post, setPost] = useState<BlogPost | null>(null);
     const [error, setError] = useState<string | null>(null);
@@ -63,48 +50,32 @@ export default function BlogPost() {
     if (!post) return <p>Loading...</p>;
 
     return (
-        <main className="min-h-screen bg-gray-900 py-10 px-5">
-            <article className="prose lg:prose-lg mx-auto text-gray-200">
-        <span dangerouslySetInnerHTML={{ __html: post.blogbody }} />
-        <style jsx>{`
-            main {
-              font-family: ${inter.style.fontFamily};
-            }
-            .prose {
-              max-width: 800px;
-              color: #e5e5e5;
-              line-height: 1.7;
-            }
-            h1 {
-              color: #f5f5f5;
-            }
-            .prose p {
-              margin-top: 1rem;
-              margin-bottom: 1.5rem;
-            }
-            .prose a {
-              color: #63b3ed;
-              text-decoration: underline;
-            }
-            .prose a:hover {
-              color: #3182ce;
-            }
-            .prose p,
-            .prose h1,
-            .prose h2,
-            .prose h3,
-            .prose h4 {
-              color: #d1d1d1;
-            }
-            pre {
-              background-color: #333;
-              padding: 10px;
-              border-radius: 5px;
-              overflow-x: auto;
-              margin-bottom: 1rem;
-            }
-          `}</style>
-          </article>
-          </main>
-    )
+        <div className="dark-theme">
+            <h1>{post.blogname}</h1>
+            <p className="date">{new Date(post.blogdate).toLocaleDateString()}</p>
+            <p>{post.blogbody}</p>
+
+            <style jsx>{`
+                .dark-theme {
+                    background-color: #121212;
+                    color: #ffffff;
+                    min-height: 100vh;
+                    padding: 20px;
+                    font-family: Arial, sans-serif;
+                }
+                h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .date {
+                    text-align: center;
+                    color: #a9a9a9;
+                    margin-bottom: 20px;
+                }
+                p {
+                    text-align: justify;
+                }
+            `}</style>
+        </div>
+    );
 }
