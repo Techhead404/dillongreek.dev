@@ -44,8 +44,8 @@ export default function Projects() {
                 { width: "fill -content", height:"auto", margin: "auto"}}
               >
             </Image>
-            <h4 className="text-xl text-sky-400 font-bold mt-2"><a href="http://techssite.com" target="_blank" className="text-sky-400 text-pretty">Techs Site</a></h4>
-            <p className="text-gray-500">My blog for sharing project and reviews. Migrating to DillonGreek.dev soon.</p>
+            <h4 className="text-xl text-sky-400 font-bold mt-2">Techs Site</h4>
+            <p className="text-gray-500"> Wix blog for sharing project and reviews. Closed after migrating everthing to this site.</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-5 w-auto">
             <Image
@@ -56,7 +56,7 @@ export default function Projects() {
               >
             </Image>
             <h4 className="text-xl text-sky-400 font-bold mt-2"><a href="http://HealingPeaceMassage.com" target="_blank" className="text-sky-400 text-pretty">Healing Peace Massage</a></h4>
-            <p className="text-gray-500">Website for a local massage business. This site was built using Vue.js for the frontend and Express.js on the backend.</p>
+            <p className="text-gray-500">Website for a local massage business. This site was built using Vue.js for the frontend and Express.js on the backend. Currently running though Square for payments and booking.</p>
           </div>
         </div>
     </main>
